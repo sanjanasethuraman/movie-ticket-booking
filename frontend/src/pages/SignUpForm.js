@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Account.css";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,10 @@ const SignUpForm = () => {
   };
 
   return (
+    <div className="App">
+        <div className="appAside" />
+        <div className="appForm">
+
     <div className="formCenter">
       <form onSubmit={handleSubmit} className="formFields">
         <div className="formField">
@@ -107,7 +112,10 @@ const SignUpForm = () => {
         </div>
       </form>
     </div>
+
+    </div>
+    </div>
   );
 };
 
-export default SignUpForm;
+export default SignUpForm

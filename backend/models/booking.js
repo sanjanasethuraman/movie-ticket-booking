@@ -4,11 +4,14 @@ const bookingSchema = mongoose.Schema({
     userId: {
         type: String,
     },
-    movieId: {
+    movieName: {
         type: String,
     },
-    theatreId: {
+    showId: {
         type: String,
+    },
+    pickedSeats: {
+        type: Array
     },
     price: {
         type: Number

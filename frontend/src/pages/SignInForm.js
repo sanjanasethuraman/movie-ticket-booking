@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Account.css";
 
 const SignInForm = () => {
   const [email, setEmail] = useState("");
@@ -12,6 +13,14 @@ const SignInForm = () => {
   };
 
   return (
+
+    <div className="App">
+        <div className="appAside" />
+        <div className="appForm">
+
+          
+
+
     <div className="formCenter">
       <form className="formFields" onSubmit={handleSubmit}>
         <div className="formField">
@@ -55,6 +64,9 @@ const SignInForm = () => {
           </Link>
         </div>
       </form>
+    </div>
+    
+    </div>
     </div>
   );
 };

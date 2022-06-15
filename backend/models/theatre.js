@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const theatreSchema = mongoose.Schema({
-    Name: {
+    name: {
         type: String,
         required: true,
     },
