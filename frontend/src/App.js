@@ -14,6 +14,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddMovie from "./forms/addMovie";
 import AddTheatre from "./forms/addTheatre";
 import ButtonExport from "./option/option";
+import AdminRegister from "./SignUp/adminRegister";
+import AdminSignInSide from "./LogIn/adminLogin";
 
 const Home = () => (
   <div>
@@ -42,7 +44,9 @@ export default function App() {
         <ThemeProvider theme={theme}>
           <Switch>
             <Route path="/" exact component={SignInSide} />
+            <Route path="/admin" exact component={AdminSignInSide} />
             <Route path="/register" component={Register} />
+            <Route path="/admin-register" component={AdminRegister} />
             <Route path ="/admin-dashboard" component={Dashboard} />
             <Route path ="/user-dashboard" component={UserDashboard} />
             <Route path ="/add-show" component={AddMovie} />

@@ -1,18 +1,13 @@
 import React, { useState } from "react";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import BalancedBig from "../Images/BalancedBig.jpg";
-import Balanced from "../Images/Balanced.jpg";
+import admin from "../Images/admin.jpg";
+import secondAdmin from "../Images/secondAdmin.jpg";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -22,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     height: "100vh"
   },
   image: {
-    backgroundImage: `url(${BalancedBig})`,
+    backgroundImage: `url(${admin})`,
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -53,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Register() {
+export default function AdminRegister() {
   const history = useHistory();
 
   const [firstName, setFirstName] = useState("");
@@ -108,7 +103,7 @@ export default function Register() {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Box marginBottom={2} align="center">
-            <img src={Balanced} style={{ width: 400, height: 150 }} />
+            <img src={secondAdmin} style={{ width: 400, height: 150 }} />
           </Box>
           <form className={classes.form} noValidate>
             <TextField

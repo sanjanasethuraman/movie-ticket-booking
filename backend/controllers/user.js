@@ -8,6 +8,8 @@ const signup = async (req, res, next) => {
         return res.status(401).json({ error: "All inputs are requrired" });
     }
 
+    console.log(req.body);
+
     if (password !== confirmPassword) {
         return res.status(403).json({ error: "Password and Confirm password do not match"})
     }

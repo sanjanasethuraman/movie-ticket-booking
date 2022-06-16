@@ -3,13 +3,19 @@ import { Booking } from "../models/booking";
 import { Seat } from "../models/seat";
 import { Show } from "../models/show";
 import { Theatres } from "../models/theatre";
+import { User } from "../models/user";
 
 const getShows = async (req, res, next) => {
-    const {date, movieName, theatreName } = req.body;
 
-    if (!(date, movieName, theatreName)) {
-        return res.status(400).json({error: "All inputs are required" });
+    const { email } = req.tokenData;
+
+    const getUser = await checkUserExists({ email: email });
+
+    if (!getUser) {
+        return res.statu(400).json({ error: "User does not exist" });
     }
+    
+    const {date, movieName, theatreName } = req.body;
 
     const getShow = await Show.find({ date: date, movieName: movieName, theatreName: theatreName });
 
