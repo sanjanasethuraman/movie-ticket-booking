@@ -1,0 +1,117 @@
+.AppAdmin {
+    height: 100vh;
+    display: flex;
+    color: white;
+  }
+  
+  .appAsideAdmin {
+    width: 50%;
+    background-color: #2394ad;
+  }
+  
+  .appFormAdmin {
+    width: 50%;
+    background-color: #0d0d0ce6;
+    padding: 25px 40px;
+    overflow: auto;
+  }
+  
+  .formCenterAdmin {
+    margin-bottom: 100px;
+  }
+  
+  .formTitleAdmin {
+    color: #2394ad;
+    font-weight: 300;
+    margin-bottom: 50px;
+  }
+  
+  .formTitleLinkAdmin {
+    color: #2394ad;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.7em;
+    margin: 0 10px;
+    padding-bottom: 5px;
+  }
+  
+  .formTitleLinkAdmin:first-child {
+    margin-left: 0;
+  }
+  
+  .formTitleLinkAdmin-active {
+    color: white;
+    border-bottom: 1px solid #9feadc;
+  }
+  
+  .formFieldAdmin {
+    margin-bottom: 40px;
+  }
+  
+  .formFieldLabelAdmin {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: white;
+  }
+  .formFieldInputAdmin {
+    width: 85%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    border-bottom: 1px solid #2394ad;
+    font-size: 1em;
+    font-weight: 300;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .formFieldInputAdmin::placeholder {
+    color: #616e7f;
+  }
+  
+  .formFieldButtonAdmin {
+    background-color: #2394ad;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    padding: 15px 70px;
+    font-size: 1.0em;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  
+  .formFieldLinkAdmin {
+    color: #66707d;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1.5px solid #2394ad;
+    padding-bottom: 5px;
+    border-left: 100px;
+  }
+  
+  .formFieldCheckboxLabelAdmin {
+    color: #646f7d;
+    font-size: 0.9em;
+  }
+  
+  .formFieldCheckboxAdmin {
+    position: relative;
+    top: 1.5px;
+  }
+  
+  .formFieldTermsLinkAdmin {
+    color: white;
+    border-bottom: 1px solid #2394ad;
+    text-decoration: none;
+    display: inline-block;
+    padding-bottom: 2px;
+    margin-left: 5px;
+  }
+  
+  .socialMediaButtonsAdmin {
+    padding: 10px 100px 10px 0px;
+  }
+  

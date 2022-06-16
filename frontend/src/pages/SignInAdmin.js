@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Account.css";
-const SignInForm = () => {
+import "./AccountAdmin.css";
+const SignInAdmin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,23 +13,23 @@ const SignInForm = () => {
 
   return (
 
-    <div className="App">
-        <div className="appAside" />
-        <div className="appForm">
+    <div className="AppAdmin">
+        <div className="appAsideAdmin" />
+        <div className="appFormAdmin">
 
           
 
 
-    <div className="formCenter">
-      <form className="formFields" onSubmit={handleSubmit}>
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="email">
+    <div className="formCenterAdmin">
+      <form className="formFieldsAdmin" onSubmit={handleSubmit}>
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="email">
             E-Mail Address
           </label>
           <input
             type="email"
             id="email"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your email"
             name="email"
             value={email}
@@ -39,14 +39,14 @@ const SignInForm = () => {
           />
         </div>
 
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="password">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="password">
             Password
           </label>
           <input
             type="password"
             id="password"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your password"
             name="password"
             value={password}
@@ -56,9 +56,9 @@ const SignInForm = () => {
           />
         </div>
 
-        <div className="formField">
-          <button className="formFieldButton">Sign In</button>{" "}
-          <Link to="/account/" className="formFieldLink">
+        <div className="formFieldAdmin">
+          <button className="formFieldButtonAdmin">Sign In</button>{" "}
+          <Link to="/account/" className="formFieldLinAdmink">
             Create an account
           </Link>
         </div>
@@ -70,4 +70,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default SignInAdmin;

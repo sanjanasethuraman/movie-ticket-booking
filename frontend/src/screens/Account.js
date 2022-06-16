@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import SignUpForm from "../pages/SignUpForm";
 import SignInForm from "../pages/SignInForm";
 
-//import "./Account.css";
+
 
 const Account = () => {
   return (

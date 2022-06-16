@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Account.css";
+import "./AccountAdmin.css";
 
-const SignUpForm = () => {
+const SignUpAdmin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,20 +15,20 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="App">
-        <div className="appAside" />
-        <div className="appForm">
+    <div className="AppAdmin">
+        <div className="appAsideAdmin" />
+        <div className="appFormAdmin">
 
-    <div className="formCenter">
-      <form onSubmit={handleSubmit} className="formFields">
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="name">
+    <div className="formCenterAdmin">
+      <form onSubmit={handleSubmit} className="formFieldsAdmin">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="name">
             First Name
           </label>
           <input
             type="text"
             id="name"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your first name"
             name="name"
             value={firstName}
@@ -38,14 +38,14 @@ const SignUpForm = () => {
             }}
           />
         </div>
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="name">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="name">
             Last Name
           </label>
           <input
             type="text"
             id="name"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your last name"
             name="name"
             value={lastName}
@@ -55,14 +55,14 @@ const SignUpForm = () => {
             }}
           />
         </div>
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="email">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="email">
             E-Mail Address
           </label>
           <input
             type="email"
             id="email"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your email"
             name="email"
             value={email}
@@ -71,14 +71,14 @@ const SignUpForm = () => {
             }}
           />
         </div>
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="password">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="password">
             Password
           </label>
           <input
             type="password"
             id="password"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your password"
             name="password"
             value={password}
@@ -87,14 +87,14 @@ const SignUpForm = () => {
             }}
           />
         </div>
-        <div className="formField">
-          <label className="formFieldLabel" htmlFor="password">
+        <div className="formFieldAdmin">
+          <label className="formFieldLabelAdmin" htmlFor="password">
             Confirm Password
           </label>
           <input
             type="password"
             id="password"
-            className="formFieldInput"
+            className="formFieldInputAdmin"
             placeholder="Enter your password"
             name="password"
             value={confirmPassword}
@@ -104,9 +104,9 @@ const SignUpForm = () => {
           />
         </div>
 
-        <div className="formField">
-          <button className="formFieldButton">Sign Up</button>{" "}
-          <Link to="/account/sign-in" className="formFieldLink">
+        <div className="formFieldAdmin">
+          <button className="formFieldButtonAdmin">Sign Up</button>{" "}
+          <Link to="/account/sign-in" className="formFieldLinkAdmin">
             I'm already member
           </Link>
         </div>
@@ -118,4 +118,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default SignUpAdmin;

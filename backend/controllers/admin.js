@@ -97,7 +97,7 @@ const addTheatre = async (req, res, next) => {
     return res.status(201).json({data: "Theatre successfully added" });
 }
 
-const addMovie = async (req, res, next) => {
+const addShow = async (req, res, next) => {
     const { theatreName, movieName, date, timeSlot, rows } = req.body;
 
     const getTheatre = await Theatres.find({name: theatreName});
@@ -139,4 +139,4 @@ const addMovie = async (req, res, next) => {
 
 }
 
-export { signup, login, addTheatre, addMovie };
+export { signup, login, addTheatre, addShow };
