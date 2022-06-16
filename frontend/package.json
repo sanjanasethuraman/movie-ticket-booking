@@ -1,18 +1,27 @@
 {
-  "name": "productivity-manager",
+  "name": "signuplogin-v23",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "react": "16.8.6",
-    "react-beautiful-dnd": "^13.1.0",
-    "react-dom": "16.8.6",
-    "react-router-dom": "5.0.1",
+    "@bitanxen/react-datatable": "^2.2.0",
+    "@material-ui/core": "4.9.9",
+    "@material-ui/icons": "4.9.1",
+    "axios": "^0.27.2",
+    "clsx": "^1.1.1",
+    "namor": "2.0.2",
+    "react": "16.12.0",
+    "react-datepicker": "^4.8.0",
+    "react-dom": "16.12.0",
+    "react-draggable": "^4.4.5",
+    "react-jss": "^10.9.0",
+    "react-native-web": "^0.18.1",
+    "react-notifications": "1.6.0",
+    "react-router-dom": "5.1.2",
     "react-scripts": "3.0.1",
     "react-seat-picker": "^1.2.0",
-    "react-social-login-buttons": "2.3.1",
-    "uuid": "^8.3.2"
+    "react-table": "7.0.4"
   },
   "devDependencies": {
     "typescript": "3.3.3"

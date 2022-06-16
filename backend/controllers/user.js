@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator";
-import { User } from "../models/user";
+import { User } from "../models/user.js";
 
 const signup = async (req, res, next) => {
     const { firstName, lastName, email, password, confirmPassword, registerType } = req.body;
@@ -33,6 +33,7 @@ const signup = async (req, res, next) => {
         password: encryptedPassword,
         registerType
     });
+    
 
     if (createUser.$response !== undefined) {
         return res.status(400).json({ error: createUser.$response.error })
@@ -48,7 +49,7 @@ const login = async (req, res, next) => {
         return res.status(400).json({error: "All inputs are required"});
     }
 
-    const getUser = await User.checkUserExists(email);
+    const getUser = await User.findOne({ email });
     if(getUser==null){
         return res.status(200).json({error:"User not found"});
     }

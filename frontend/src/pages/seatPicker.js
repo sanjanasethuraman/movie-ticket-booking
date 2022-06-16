@@ -4,7 +4,7 @@ import SeatPicker from "react-seat-picker";
 
 import "./styles.css";
 
-function SeatPicker() {
+function SeatPickerUser() {
 
   return (
     <div className="App">
@@ -14,4 +14,4 @@ function SeatPicker() {
   );
 }
 
-export default SeatPicker;
+export default SeatPickerUser;

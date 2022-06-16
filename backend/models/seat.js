@@ -2,12 +2,10 @@ import mongoose from "mongoose";
 
 const seatSchema = new mongoose.Schema({
     number: {
-        type: String,
-        required: true
+        type: String
     },
     isReserved: {
-        type: Boolean,
-        default: false
+        type: Boolean
     },
     showId:{
         type: String

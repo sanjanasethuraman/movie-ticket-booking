@@ -1,8 +1,8 @@
 import { validationResult } from "express-validator";
-import { User } from "../models/user";
-import { Theatres } from "../models/theatre";
-import { Seat } from "../models/seat";
-import { Show } from "../models/show";
+import { User } from "../models/user.js";
+import { Theatres } from "../models/theatre.js";
+import { Seat } from "../models/seat.js";
+import { Show } from "../models/show.js";
 
 const signup = async (req, res, next) => {
     const { firstName, lastName, email, password, confirmPassword, registerType } = req.body;
@@ -71,6 +71,13 @@ const login = async (req, res, next) => {
 }
 
 const addTheatre = async (req, res, next) => {
+    const { email } = req.tokenData;
+
+    const getAdmin = await User.checkAdminExists(email);
+
+    if (!getAdmin) {
+        return res.status(409).json({ error: "Admin does not exist, please sign up" });
+    }
 
     const { name, ticketPrice, city } = req.body;
 
@@ -79,8 +86,8 @@ const addTheatre = async (req, res, next) => {
     }
 
     const getTheatre = await Theatres.find({name: name, city: city });
-
-    if (getTheatre) {
+   
+    if (getTheatre.length != 0) {
         return res.status(400).json({error: "Theatre already exists." });
     }
 
@@ -98,7 +105,7 @@ const addTheatre = async (req, res, next) => {
 }
 
 const addShow = async (req, res, next) => {
-    const { theatreName, movieName, date, timeSlot, rows } = req.body;
+    const { theatreName, movieName, date, timeSlot } = req.body;
 
     const getTheatre = await Theatres.find({name: theatreName});
 
@@ -118,24 +125,33 @@ const addShow = async (req, res, next) => {
     })
 
     //get that particular show
-    createShow = createShow.toJson();
     let showId = createShow._id;
-
+    let isReserved = false;
     //add rows
+    const rows = [];
     for(var row=1; row<=10; row++){
         var currRow = [];
         for(var seat=1; seat<=6; seat++){
-            let seatCode = String.fromCharCode(65+i-1);
+            let seatCode ="";
+            seatCode =seatCode.concat(row);
+            seatCode =seatCode.concat(String.fromCharCode(65+seat-1));
             const createSeat = await Seat.create({
-                seatCode,
-                isReserved,
-                showId
+                number: seatCode,
+                isReserved: isReserved,
+                showId: showId
             })
-
-            createSeat = createSeat.toJson();
-            currRow.push(createSeat);
+            const createdSeat = await Seat.findOne({_id: createSeat._id});
+           currRow.push(createdSeat._id);
         }
+        rows.push(currRow);
+        console.log(currRow);
+        Show.findOneAndUpdate({_id: createShow._id}, {$push: { rows: [1,2,3,4]}});
     }
+
+    
+    const show = await Show.findOne({_id: createShow._id});
+    console.log(show.rows);
+    return res.status(201).json({data: "Show successfully added" });
 
 }
 

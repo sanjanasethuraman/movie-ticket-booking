@@ -1,11 +1,10 @@
-App {
+.App {
     font-family: sans-serif;
     text-align: center;
   }
   
   .seat {
-    background-color: rgb(73, 151, 73);
-    margin-left: 2px;
+    background-color: green;
   }
   
   .seat--reserved {
@@ -13,7 +12,7 @@ App {
   }
   
   .seat--selected {
-    background-color: rgb(190, 69, 106);
+    background-color: blue;
   }
   
   .seat-picker {
@@ -23,3 +22,4 @@ App {
   div.blank {
     display: none;
   }
+  

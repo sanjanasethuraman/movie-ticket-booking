@@ -53,7 +53,13 @@ class UserMethods {
     }
 
     static async checkUserExists(email){
-        const user = await this.findOne({ email });
+        const user = await this.findOne({ email, registerType: "user" });
+        let result = (user)? user : undefined;
+        return result;
+    }
+
+    static async checkAdminExists(email){
+        const user = await this.findOne({ email: email, registerType: "admin"});
         let result = (user)? user : undefined;
         return result;
     }

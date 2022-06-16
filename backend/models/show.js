@@ -8,7 +8,7 @@ const showSchema = mongoose.Schema({
         type: String,
     },
     date: {
-        type: date
+        type: Date
     },
     timeSlot:{
         type: String

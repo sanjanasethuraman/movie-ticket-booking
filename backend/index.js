@@ -2,6 +2,8 @@ import express from "express";
 import {} from "dotenv/config";
 import cors from "cors";
 import bodyParser from "body-parser";
+import { router as authRouter } from "./routes/user.js";
+import { router as adminRouter } from "./routes/admin.js";
 
 import {} from "./dbconnection/dbConnection.js";
 
@@ -20,4 +22,8 @@ app.listen(process.env.PORT, () => {
 app.get("/", (req, res) => {
     res.send("Welcome to ticket booking app")
 });
+
+app.use("/auth", authRouter); 
+app.use("/admin", adminRouter); 
+
 
